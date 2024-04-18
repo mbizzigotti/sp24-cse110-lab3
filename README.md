@@ -1,2 +1,2 @@
 # Lab 2
-[published site](https://mbizzigotti.github.io/Lab2cse110/)
+https://mbizzigotti.github.io/sp24-cse110-lab3/
