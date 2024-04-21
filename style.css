@@ -1,0 +1,96 @@
+/* make page dark :) */
+* {
+    color: white;
+    background-color: black;
+}
+
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+h1 {
+    text-align: center;
+    font: bold 50px "Fira Sans", sans-serif;
+    text-decoration: 4px underline;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+main {
+    label > * {
+        background-color: rgb(0,30,100);
+        border-style: solid;
+        border-color: white;
+        border-radius: 0.5rem;
+        border-width: 1px;
+        padding: 2px 4px 2px 4px;
+        color: lightblue;
+    }
+}
+
+p {
+    color: rgb(100,100,100);
+    text-decoration: wavy underline overline;
+    text-align: center;
+}
+
+section {
+    background-color: hsla(0,0%,100%, 0.1);
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    border-style: solid;
+    border-color: hsla(0,0%,100%, 0.1);
+    border-radius: 20px;
+}
+
+
+/* ----->     Details     <----- */
+details {
+  font:
+    16px "Open Sans",
+    Calibri,
+    sans-serif;
+  width: 100%;
+  border-radius: 10px;
+}
+
+details > summary:hover {
+    background-color: red;
+}
+details[open] > summary:hover {
+    background-color: red;
+}
+
+details > summary {
+  padding: 2px 6px;
+  width: 98%;
+  height: 2rem;
+  background-color: #000;
+  border: none;
+  box-shadow: 3px 3px 4px black;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+details > p {
+  border-radius: 0 0 10px 10px;
+  background-color: #000;
+  padding: 2px 6px;
+  margin: 0;
+  box-shadow: 3px 3px 4px black;
+}
+
+details[open] > summary {
+  background-color: #007;
+}
+/* ----->     Details     <----- */
+
+
+/* this is really ugly */
+fieldset {
+    display: grid;
+}
