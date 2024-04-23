@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Describe the design problem**
-A clear and concise description of what the bug is.
+A clear and concise description of what the problem is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
