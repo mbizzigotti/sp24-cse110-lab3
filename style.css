@@ -1,0 +1,104 @@
+:root {
+    --font:     Roboto,  sans-serif;
+    --alt-font: Raleway, sans-serif;
+    --accent: hsl(200, 100%, 73%);
+    --c1:     color-mix(in srgb, var(--accent) 100%, black);
+    --c2:     color-mix(in srgb, var(--accent)  90%, black);
+}
+#alt {
+    font-family: var(--alt-font, monospace);
+}
+@media (min-width: 10em) and (orientation: landscape) {
+    :root {
+        
+    }
+}
+
+* {
+    font-family: var(--font, sans-serif);
+    /*
+    background-color: black;
+    color: white;
+    */
+}
+
+a[href^="https://"][href$=".org"] {
+  color: lime;
+}
+
+main {
+    display: flex;
+    flex-flow: wrap;
+    font-family: monospace;
+}
+
+.meeting {
+    background-color: var(--c1, blue);
+    width: fit-content;
+    padding: 1px 10px 10px 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: black;
+    margin: auto;
+}
+
+.meeting h2 {
+    text-align: center;
+    text-decoration: underline 3px;
+}
+h3 {
+    text-align: center;
+}
+
+/*
+section.attendence {
+    outline: auto;
+    outline-offset: 1px;
+    outline-width: 1px;
+    outline-color: 10px;
+    outline-style: dashed;
+}
+*/
+
+section.item {
+    background-color: var(--c2);
+    border-color:     var(--c2);
+    border-radius: 8px;
+    border-width: 10px;
+    border-style: solid;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+h4 {
+    margin-top: 0px;
+}
+li {
+    text-align: justify;
+}
+
+.attendence {
+    display: flex;
+    justify-content: center;
+}
+.attendence-list {
+    display: flex;
+    gap: 4px;
+    background-color: hsl(200, 100%, 53%);
+    padding: 4px;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.attendence-list > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 2px 6px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+#attendence-list-head {
+    background-color: #0000;
+}
