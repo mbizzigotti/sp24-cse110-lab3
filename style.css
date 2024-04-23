@@ -1,16 +1,23 @@
 :root {
     --font:     Roboto,  sans-serif;
     --alt-font: Raleway, sans-serif;
+
     --accent: hsl(200, 100%, 73%);
+    --c0:     color-mix(in srgb, var(--accent)  50%, white);
     --c1:     color-mix(in srgb, var(--accent) 100%, black);
     --c2:     color-mix(in srgb, var(--accent)  90%, black);
 }
 #alt {
     font-family: var(--alt-font, monospace);
 }
-@media (min-width: 10em) and (orientation: landscape) {
-    :root {
-        
+@media screen and (orientation: portrait) {
+    main {
+        flex-flow: column nowrap;
+    }
+}
+@media screen and (orientation: landscape) {
+    main {
+        flex-flow: row wrap;
     }
 }
 
@@ -23,12 +30,13 @@
 }
 
 a[href^="https://"][href$=".org"] {
-  color: lime;
+  color: green;
 }
 
 main {
     display: flex;
-    flex-flow: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
     font-family: monospace;
 }
 
@@ -83,22 +91,33 @@ li {
     justify-content: center;
 }
 .attendence-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-auto-flow: dense row;
     gap: 4px;
-    background-color: hsl(200, 100%, 53%);
+    background-color: var(--c2);
     padding: 4px;
     border-radius: 6px;
     width: fit-content;
 }
 
 .attendence-list > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--c0);
     text-align: center;
     padding: 2px 6px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 0.5rem;
 }
 
 #attendence-list-head {
     background-color: #0000;
+}
+
+.meeting-info {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-grow: 1;
+    flex-flow: wrap;
+    /*background-color: black;*/
 }

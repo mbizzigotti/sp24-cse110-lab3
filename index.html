@@ -16,7 +16,6 @@
     <body>
         <header>
             <h1 style="text-align:center">Meeting Minutes</h1>
-            <hr>
         </header>
         
         <main>
@@ -166,69 +165,61 @@
                     </figure>
                 </details>
             </section>
-        </main>
-        
-        <footer>
-            <hr>
+            
             <!-- Form with fieldset, input, textarea, datalist, select, button -->
-            <form>
+            <form style="width:100%;">
                 <fieldset>
                     <legend>New Meeting</legend>
 
-                    <label>Title</label>
-                    <input name="submitted-name">
-                    <br>
-                    
-                    <label>Attendence</label>
-                    <input type="radio" id="yes" name="attendence" value="yes" checked>
-                    <label for="yes">Yes</label>
-                    <input type="radio" id="no" name="attendence" value="no">
-                    <label for="no">No</label>
-                    <br>
-                    
-                    <label>Topic</label>
-                    <input type="search" list="topics">
-                    <datalist id="topics">
-                        <option value="brainstorming"></option>
-                        <option value="check-ins"></option>
-                        <option value="documentation"></option>
-                        <option value="code review"></option>
-                    </datalist>
-                    <br>
+                    <div class="meeting-info">
+                        <section>
+                            <b>Title</b>
+                            <input name="submitted-name">
+                        </section>
                         
-                    <label>Color</label>
-                    <input type="checkbox">
-                    <input type="color">
-                    <br>
-                    
-                    <label>Date</label>
-                    <input type="date">
-                    <input type="datetime-local">
-                    <input type="week">
-                    <input type="month">
-                    <input type="time">
-                    <br>
+                        <section>
+                            <fieldset>
+                                <legend>Attendence</legend>
+                                <input type="radio" name="attendence" value="yes" checked>
+                                <label>Yes</label>
+                                <br>
+                                <input type="radio" name="attendence" value="no">
+                                <label>No</label>
+                            </fieldset>
+                        </section>
                         
+                        <section>
+                            <b>Topic</b>
+                            <input type="search" list="topics">
+                            <datalist id="topics">
+                                <option value="brainstorming"></option>
+                                <option value="check-ins"></option>
+                                <option value="documentation"></option>
+                                <option value="code review"></option>
+                            </datalist>
+                        </section>
+                        
+                        <section>
+                            <b>Date</b>
+                            <input type="date">
+                        </section>
+                        
+                        <fieldset>
+                            <legend>Attachments</legend>
+                            <input type="file" multiple>
+                        </fieldset>
+                    </div>                
+                    
                     <fieldset>
-                        <legend>Attachments</legend>
-                        <input type="file" multiple>
+                        <legend>Description</legend>
+                        <textarea style="width:100%"></textarea>
                     </fieldset>
 
                     <fieldset>
                         <legend>Identity</legend>
                         <label>Email</label> <input type="email">
-                        <label>Password</label> <input type="password">
-                        <input type="image" src="resources/button.png" alt="button" height="30">
-                        <input type="range">
-                        <input type="number">
                         <br>
-                        <label><em>Tel</em>:</label> <input type="tel">
-                        <label><em>URL</em>:</label> <input type="url">
-                    </fieldset>
-                    
-                    <fieldset>
-                        <legend>Description</legend>
-                        <textarea rows="5" cols="100"></textarea>
+                        <label>Password</label> <input type="password">
                     </fieldset>
                     
                     <label for="o">Choose: </label>
@@ -249,8 +240,15 @@
                     <input type="submit">
                 </fieldset>
             </form>
-
-            
+        </main>
+        
+        <footer>
+            <nav>
+                <a href="/Home/">Home</a> |
+                <a href="https://github.com" target="_blank">Github</a> |
+                <a href="https://archive.org" target="_blank">archive.org</a> |
+                <a href="mailto:user@example.com">Contact</a>
+            </nav>
         </footer>
     </body>
 </html>
