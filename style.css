@@ -1,11 +1,16 @@
 :root {
+    /* Fonts */
     --font:     Roboto,  sans-serif;
     --alt-font: Raleway, sans-serif;
-
-    --accent: hsl(200, 100%, 73%);
-    --c0:     color-mix(in srgb, var(--accent)  50%, white);
+    
+    /* Colors */
+    --main:   white;
+    --accent: hsl(200, 0%, 30%);
+    --c0:     color-mix(in srgb, var(--accent)  80%, white);
     --c1:     color-mix(in srgb, var(--accent) 100%, black);
-    --c2:     color-mix(in srgb, var(--accent)  90%, black);
+    --c2:     color-mix(in srgb, var(--accent)  80%, black);
+
+    background-color: black;
 }
 #alt {
     font-family: var(--alt-font, monospace);
@@ -15,7 +20,7 @@
         flex-flow: column nowrap;
     }
 }
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 30em) and (orientation: landscape) {
     main {
         flex-flow: row wrap;
     }
@@ -23,10 +28,21 @@
 
 * {
     font-family: var(--font, sans-serif);
-    /*
-    background-color: black;
     color: white;
-    */
+}
+
+h1 {
+    position: sticky;
+    top: 0px;
+}
+
+i {
+    position: relative;
+    left: 40px;
+}
+
+fieldset * {
+    background-color: black;
 }
 
 a[href^="https://"][href$=".org"] {
@@ -38,36 +54,47 @@ main {
     justify-content: space-evenly;
     gap: 10px;
     font-family: monospace;
+    background-color: rgba(0,0,0,0);
 }
 
 .meeting {
+    display: block;
     background-color: var(--c1, blue);
     width: fit-content;
     padding: 1px 10px 10px 10px;
     border-style: solid;
     border-width: 2px;
     border-radius: 20px;
-    border-color: black;
+    border-color: white;
     margin: auto;
 }
 
 .meeting h2 {
-    text-align: center;
     text-decoration: underline 3px;
 }
-h3 {
+
+h2, h3 {
     text-align: center;
 }
 
-/*
-section.attendence {
-    outline: auto;
-    outline-offset: 1px;
-    outline-width: 1px;
-    outline-color: 10px;
-    outline-style: dashed;
+h2:has(+ h3) {
+    color: var(--main, white);
 }
-*/
+
+button + input {
+    background-color: color(srgb 0.7 0 0);
+    border: 1px solid #ff0000;
+    border-radius: 4px;
+    min-width: 60px;
+}
+button + input:hover {
+    background-color: color(srgb .8 .1 .1);
+    border: 1px solid rgb(139, 0, 0);
+}
+button + input:active {
+    background-color: color(srgb 1 0.4 0.4);
+    border: 1px solid color-mix(in srgb, darkred 50%, black);
+}
 
 section.item {
     background-color: var(--c2);
@@ -78,12 +105,16 @@ section.item {
     text-align: center;
     margin-bottom: 10px;
     margin-top: 10px;
+    margin-left: 0pt;
+    margin-right: 0mm;
+    & li {
+        text-align: justify;
+        max-width: fit-content;
+    }
 }
 h4 {
     margin-top: 0px;
-}
-li {
-    text-align: justify;
+    margin: 0pt 0pt 0pt 0pt
 }
 
 .attendence {
@@ -104,9 +135,12 @@ li {
 .attendence-list > div {
     background-color: var(--c0);
     text-align: center;
-    padding: 2px 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     font-size: 16px;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
 }
 
 #attendence-list-head {
@@ -115,9 +149,23 @@ li {
 
 .meeting-info {
     display: flex;
-    gap: 1rem;
+    gap: 1em;
     justify-content: center;
     flex-grow: 1;
     flex-flow: wrap;
-    /*background-color: black;*/
+    width: 100%;
+}
+
+footer nav {
+    outline: dotted blue;
+    width: fit-content;
+    height: 1.3rem;
+}
+
+.selected ~ a {
+    text-decoration: wavy underline;
+}
+
+.hidden {
+    display: none;
 }
