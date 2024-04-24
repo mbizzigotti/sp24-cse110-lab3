@@ -125,6 +125,7 @@ h4 {
     display: grid;
     grid-template-columns: repeat(10, auto);
     grid-auto-flow: dense row;
+    grid-auto-columns: min-content;
     gap: 4px;
     background-color: var(--c2);
     padding: 4px;
@@ -152,7 +153,8 @@ h4 {
     gap: 1em;
     justify-content: center;
     flex-grow: 1;
-    flex-flow: wrap;
+    flex-wrap: wrap;
+    flex-basis: auto;
     width: 100%;
 }
 
